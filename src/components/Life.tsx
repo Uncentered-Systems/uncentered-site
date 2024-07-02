@@ -15,6 +15,8 @@ export default function Life() {
                 graphics: {
                     colors: {
                         grid: 'transparent',
+                        cell: 'black',
+                        background: 'white',
                     },
                     cells: {
                         size: 10,

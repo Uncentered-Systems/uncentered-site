@@ -5,10 +5,6 @@
     font-family: 'Wittgenstein', serif !important;
 }
 
-body {
-    @apply overflow-hidden;
-}
-
 a {
     @apply decoration-none text-green-700;
 }

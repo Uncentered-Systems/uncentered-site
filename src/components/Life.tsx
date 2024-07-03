@@ -8,8 +8,8 @@ export default function Life() {
 
     useEffect(() => {
         if (canvasRef.current && !game) {
-            const width = window.innerWidth * 2;
-            const height = window.innerHeight * 2;
+            const width = window.innerWidth;
+            const height = window.innerHeight;
             const center: Point = { x: -7, y: -3 };
             const game = GameLife(canvasRef.current, {
                 graphics: {
@@ -25,8 +25,8 @@ export default function Life() {
                         zoom: 400,
                         width,
                         height,
-                        offset_x: Math.round(width / 4),
-                        offset_y: Math.round(height / 4),
+                        offset_x: Math.round(width / 2),
+                        offset_y: Math.round(height / 2),
                     }
                 }
             });
@@ -51,8 +51,10 @@ export default function Life() {
         }
     }, [canvasRef]);
 
-    return <canvas
-        ref={canvasRef}
-        className='w-full h-full absolute top-0 bottom-0 left-0 right-0 pointer-events-none opacity-10 -z-10'
-    />;
+    return <div className='w-screen h-screen absolute top-0 bottom-0 left-0 right-0 pointer-events-none opacity-10 -z-10 overflow-hidden'>
+        <canvas
+            ref={canvasRef}
+            className='w-screen h-screen absolute top-0 bottom-0 left-0 right-0'
+        />
+    </div>;
 }

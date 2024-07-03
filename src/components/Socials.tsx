@@ -1,4 +1,7 @@
 import { FaDiscord, FaEnvelope, FaTwitter } from "react-icons/fa6";
+import cn from 'classnames'
+import { isMobileCheck } from "../utils/dimensions";
+
 const SOCIALS = [
     {
         icon: FaTwitter,
@@ -15,12 +18,19 @@ const SOCIALS = [
 ]
 
 export default function Socials() {
-  return <div className="flex items-center gap-4 p-xl">
+    const isMobile = isMobileCheck()
+    return <div className={cn("flex items-center gap-4", {
+        'p-8': !isMobile,
+        'p-4': isMobile
+    })}>
     {SOCIALS.map((social, index) => (
         <a 
             href={social.url} 
             target="_blank"
-            className="text-2xl text-gray"
+            className={cn("text-gray", {
+                'text-2xl': !isMobile,
+                'text-xl': isMobile
+            })}
             key={index}
         >
             <social.icon />

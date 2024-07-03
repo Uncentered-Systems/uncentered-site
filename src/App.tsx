@@ -6,7 +6,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 
 function App() {
-  return <div className='flex flex-col w-screen h-screen max-w-screen max-h-screen overflow-y-scroll'>
+  return <div className='flex flex-col w-screen max-w-screen min-h-screen overflow-y-scroll'>
     <Life />
     <BrowserRouter>
       <Routes>

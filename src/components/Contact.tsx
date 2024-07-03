@@ -1,9 +1,11 @@
 import { useState } from "react";
-import Life from "./Life";
+import cn from 'classnames'
+import { isMobileCheck } from "../utils/dimensions";
 import NavBar from "./NavBar";
 
 export default function Contact() {
     const [message, setMessage] = useState('');
+    const isMobile = isMobileCheck()
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -14,12 +16,24 @@ export default function Contact() {
 
     return <>
         <NavBar />
-        <div className="flex flex-col self-center grow gap-xl">
-            <h1 className="text-4xl font-bold">Contact</h1>
-            <p className="text-xl">
+        <div className={cn("flex flex-col grow", {
+            'p-8 gap-8': !isMobile,
+            'p-4 gap-4': isMobile
+        })}>
+            <h1 className={cn("font-bold", {
+                'text-4xl': !isMobile,
+                'text-2xl': isMobile
+            })}>Contact</h1>
+            <p className={cn({
+                'text-xl': !isMobile,
+                'text-lg': isMobile
+            })}>
             If you have any questions or feedback, please reach out.
         </p>
-        <form className="flex flex-col items-center gap-4 w-[500px]" onSubmit={onSubmit}>
+        <form className={cn("flex flex-col items-center gap-4", {
+            'w-[500px]': !isMobile,
+            'w-full': isMobile
+        })} onSubmit={onSubmit}>
             <textarea
                 className="self-stretch min-h-[200px]"
                 placeholder="Message"

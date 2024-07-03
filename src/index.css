@@ -12,3 +12,11 @@ body {
 a {
     @apply decoration-none text-green-700;
 }
+
+button {
+    @apply bg-green-700 text-white font-bold p-2 rounded-md border-0;
+}
+
+input, textarea {
+    @apply bg-green/10 font-bold p-2 rounded-md border-0 backdrop-blur-sm;
+}

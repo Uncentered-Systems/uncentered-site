@@ -53,6 +53,6 @@ export default function Life() {
 
     return <canvas
         ref={canvasRef}
-        className='w-full h-full absolute top-0 bottom-0 left-0 right-0 pointer-events-none opacity-10 z-10'
+        className='w-full h-full absolute top-0 bottom-0 left-0 right-0 pointer-events-none opacity-10 -z-10'
     />;
 }

@@ -16,7 +16,7 @@ export default function Home() {
             })}>Uncentered Systems</h1>
             <p className={cn("text-justify", {
                 'w-[500px] text-lg ml-32': !isMobile,
-                'w-full pl-4': isMobile
+                'ml-16': isMobile
             })}>
                 Uncentered Systems is a development laboratory for extensible, high-throughput Web3 applications.
                 We believe that crypto should be simple, seamless, and optimized for AI.

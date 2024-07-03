@@ -15,12 +15,12 @@ export default function Home() {
                 'text-4xl': isMobile
             })}>Uncentered Systems</h1>
             <p className={cn("text-justify", {
-                'w-[500px] text-lg': !isMobile,
+                'w-[500px] text-lg ml-32': !isMobile,
                 'w-full pl-4': isMobile
             })}>
-            Uncentered Systems is a development laboratory for extensible, high-throughput Web3 applications.
-            We believe that crypto should be simple, seamless, and optimized for AI.
-            Fundamental tools of our stack include: Rust, Ethereum, Wasm, and the <a href="//kinode.org">Kinode platform</a>.
+                Uncentered Systems is a development laboratory for extensible, high-throughput Web3 applications.
+                We believe that crypto should be simple, seamless, and optimized for AI.
+                Fundamental tools of our stack include: Rust, Ethereum, Wasm, and the <a href="//kinode.org">Kinode platform</a>.
             </p>
         </div>
     </>

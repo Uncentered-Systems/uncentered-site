@@ -34,20 +34,6 @@ export default function Life() {
             game.bornCells(cells.map(cell => ({ x: cell.x + center.x, y: cell.y + center.y })));
             game.startEvolution();
             setGame(game);
-            const interval = setInterval(() => {
-                const shouldSetZoom = game.graphics.getConfig().board.zoom > 100;
-                if (shouldSetZoom) {
-                    game.graphics.setConfig({
-                        ...game.graphics.getConfig(),
-                        board: {
-                            ...game.graphics.getConfig().board,
-                            zoom: Math.max(game.graphics.getConfig().board.zoom - 1, 100)
-                        }
-                    })
-                } else {
-                    clearInterval(interval)
-                }
-            }, 100)
         }
     }, [canvasRef]);
 

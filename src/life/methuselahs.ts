@@ -46,3 +46,11 @@ export const BLOM = [
     { x: 8, y: 4 },
     { x: 10, y: 4 },
 ]
+
+export const R_PENTOMINO_GRANDPARENT = [
+    { x: 2, y: 0 },
+    { x: 3, y: 0 },
+    { x: 0, y: 1 },
+    { x: 2, y: 1 },
+    { x: 2, y: 2 },
+]

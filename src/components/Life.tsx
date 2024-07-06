@@ -1,6 +1,6 @@
 import GameLife, { GameOfLife, CanvasController, Point } from 'game-life';
 import { useEffect, useRef, useState } from 'react';
-import { BLOM } from '../life/methuselahs';
+import { R_PENTOMINO_GRANDPARENT } from '../life/methuselahs';
 
 export default function Life() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -10,7 +10,7 @@ export default function Life() {
         if (canvasRef.current && !game) {
             const width = window.innerWidth;
             const height = window.innerHeight;
-            const center: Point = { x: -7, y: -3 };
+            const center: Point = { x: 0, y: 0 };
             const game = GameLife(canvasRef.current, {
                 graphics: {
                     colors: {
@@ -30,7 +30,7 @@ export default function Life() {
                     }
                 }
             });
-            const cells = BLOM;
+            const cells = R_PENTOMINO_GRANDPARENT;
             game.bornCells(cells.map(cell => ({ x: cell.x + center.x, y: cell.y + center.y })));
             game.startEvolution();
             setGame(game);

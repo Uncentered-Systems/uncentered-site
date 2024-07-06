@@ -16,7 +16,3 @@ button {
 input, textarea {
     @apply bg-green/10 font-bold p-2 rounded-md border-0 backdrop-blur-sm;
 }
-
-img {
-    @apply rounded-md;
-}

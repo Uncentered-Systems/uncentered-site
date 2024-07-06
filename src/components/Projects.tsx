@@ -36,7 +36,7 @@ const PARTNERS = [
 function ProjectPartnerCard({ project, index }: { project: { title: string, description: string, image: string }, index: number }) {
     const isMobile = isMobileCheck()
     return <div 
-        key={index} 
+        key={index + project.title} 
         className={cn("flex bg-gray/10 rounded-md backdrop-blur-sm", {
             'w-full gap-4 p-4': isMobile,
             'w-[45%] gap-8 p-8 self-stretch': !isMobile

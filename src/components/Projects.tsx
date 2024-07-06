@@ -81,7 +81,7 @@ export default function Projects() {
             <h2 className={cn("font-bold", {
                 'text-4xl': !isMobile,
                 'text-2xl': isMobile
-            })}>Partners</h2>
+            })}>Strategic Partners</h2>
             <div className="flex flex-wrap gap-8">
                 {PARTNERS.map((partner, index) => (
                     <ProjectPartnerCard project={partner} index={index} />

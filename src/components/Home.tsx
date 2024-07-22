@@ -7,7 +7,7 @@ export default function Home() {
     return <>
         <NavBar />
         <div className={cn('flex flex-col grow justify-center items-end self-start', {
-            'p-8 gap-8': !isMobile,
+            'ml-16 p-8 gap-8': !isMobile,
             'p-4 gap-4': isMobile
         })}>
             <h1 className={cn('self-end', {

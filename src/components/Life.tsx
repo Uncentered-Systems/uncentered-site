@@ -15,8 +15,8 @@ export default function Life() {
                 graphics: {
                     colors: {
                         grid: 'transparent',
-                        cell: 'black',
-                        background: 'white',
+                        cell: '#005e2f',
+                        background: 'transparent',
                     },
                     cells: {
                         size: 10,
@@ -37,7 +37,7 @@ export default function Life() {
         }
     }, [canvasRef]);
 
-    return <div className='w-screen h-screen absolute top-0 bottom-0 left-0 right-0 pointer-events-none opacity-10 -z-10 overflow-hidden'>
+    return <div className='w-screen h-screen fixed top-0 bottom-0 left-0 right-0 pointer-events-none opacity-10 overflow-hidden'>
         <canvas
             ref={canvasRef}
             className='w-screen h-screen absolute top-0 bottom-0 left-0 right-0'

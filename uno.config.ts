@@ -12,7 +12,10 @@ const config = {
     
   ],
   theme: {
-
+    colors: {
+      white: '#FFFCF5',
+      green: '#005e2f'
+    }
   },
   transformers: [
     transformerDirectives()

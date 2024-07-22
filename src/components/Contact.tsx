@@ -16,11 +16,11 @@ export default function Contact() {
 
     return <>
         <NavBar />
-        <div className={cn("flex flex-col grow", {
+        <div className={cn("flex flex-col grow self-start", {
             'p-8 gap-8': !isMobile,
             'p-4 gap-4': isMobile
         })}>
-            <h1 className={cn("font-bold", {
+            <h1 className={cn({
                 'text-4xl': !isMobile,
                 'text-2xl': isMobile
             })}>Contact</h1>

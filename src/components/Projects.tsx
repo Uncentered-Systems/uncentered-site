@@ -33,10 +33,9 @@ const PARTNERS = [
     }
 ]
 
-function ProjectPartnerCard({ project, index }: { project: { title: string, description: string, image: string }, index: number }) {
+function ProjectPartnerCard({ project }: { project: { title: string, description: string, image: string } }) {
     const isMobile = isMobileCheck()
     return <div 
-        key={index + project.title} 
         className={cn("flex bg-gray/10 rounded-md backdrop-blur-sm", {
             'w-full gap-4 p-4': isMobile,
             'w-[45%] gap-8 p-8 self-stretch': !isMobile
@@ -47,7 +46,7 @@ function ProjectPartnerCard({ project, index }: { project: { title: string, desc
             'w-16 h-16': isMobile
         })} />
         <div className='flex flex-col gap-2'>
-            <h2 className={cn("font-bold", {
+            <h2 className={cn({
                 'text-2xl': !isMobile,
                 'text-xl': isMobile
             })}>{project.title}</h2>
@@ -66,7 +65,7 @@ export default function Projects() {
             'p-8 gap-8': !isMobile,
             'p-4 gap-4': isMobile
         })}>
-            <h1 className={cn("font-bold", {
+            <h1 className={cn({
                 'text-4xl': !isMobile,
                 'text-2xl': isMobile
             })}>Projects</h1>
@@ -75,16 +74,16 @@ export default function Projects() {
                 'gap-8': !isMobile
             })}>
                 {PROJECTS.map((project, index) => (
-                    <ProjectPartnerCard project={project} index={index} />
+                    <ProjectPartnerCard key={index} project={project} />
                 ))}
             </div>
-            <h2 className={cn("font-bold", {
+            <h2 className={cn({
                 'text-4xl': !isMobile,
                 'text-2xl': isMobile
             })}>Strategic Partners</h2>
             <div className="flex flex-wrap gap-8">
                 {PARTNERS.map((partner, index) => (
-                    <ProjectPartnerCard project={partner} index={index} />
+                    <ProjectPartnerCard project={partner} key={index} />
                 ))}
             </div>
         </div>

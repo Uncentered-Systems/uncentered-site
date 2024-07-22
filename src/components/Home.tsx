@@ -6,16 +6,19 @@ export default function Home() {
     const isMobile = isMobileCheck()
     return <>
         <NavBar />
-        <div className={cn('flex flex-col grow w-full justify-center', {
+        <div className={cn('flex flex-col grow justify-center items-end self-start', {
             'p-8 gap-8': !isMobile,
             'p-4 gap-4': isMobile
         })}>
-            <h1 className={cn('font-bold', {
+            <h1 className={cn('self-end', {
+                'text-4xl': isMobile,
                 'text-6xl': !isMobile,
-                'text-4xl': isMobile
-            })}>Uncentered Systems</h1>
+            })}>
+                Uncentered <br/> Systems
+                <span className="text-xs">&reg;</span>
+            </h1>
             <p className={cn("text-justify", {
-                'w-[500px] text-lg ml-32': !isMobile,
+                'w-[500px] text-lg': !isMobile,
                 'ml-16': isMobile
             })}>
                 Uncentered Systems is a development laboratory for extensible, high-throughput Web3 applications.

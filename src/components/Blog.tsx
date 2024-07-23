@@ -22,7 +22,7 @@ export default function Blog() {
                 'text-4xl': isMobile,
                 'text-6xl': !isMobile,
             })}>Blog</h1>
-            {posts.map((post, i) => <BlogPostCard key={i} postData={post} />)}
+            {posts.slice().reverse().map((post, i) => <BlogPostCard key={i} postData={post} />)}
         </div>
     </>)
 }

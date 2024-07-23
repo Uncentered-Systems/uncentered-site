@@ -28,20 +28,24 @@ export default function BlogPost() {
 
     return (<>
         <NavBar />
-        <div className={cn('flex flex-col grow justify-center items-end self-start', {
+        <div className={cn('flex flex-col grow justify-center items-end self-start w-full', {
             'ml-16 p-8 gap-8': !isMobile,
-            'p-4 gap-4': isMobile
+            'py-4 gap-4': isMobile
         })}>
             {token && <div className="absolute top-0 right-0">
                 <button>Edit</button>
             </div>}
             <h1 className={cn('self-end', {
-                'text-4xl': isMobile,
+                'mr-4 text-4xl': isMobile,
                 'text-6xl': !isMobile,
             })}>
                 {postData?.title}
             </h1>
-            <div dangerouslySetInnerHTML={{ __html: postMarkdown }} />
+            <div
+                dangerouslySetInnerHTML={{ __html: postMarkdown }}
+                className={cn('post-content', {
+                    'p-4 max-w-screen': isMobile
+                })} />
         </div>
     </>
     )

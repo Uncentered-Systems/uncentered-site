@@ -37,6 +37,14 @@ h6 {
     letter-spacing: -0.03em;
 }
 
-img {
+img:not(.unrounded) {
     @apply object-cover rounded-md shadow-md;
+}
+
+.post-content img {
+    @apply max-w-full max-h-64 object-cover block mx-auto mb-8;
+}
+
+.post-content p {
+    @apply leading-6 mb-8;
 }

@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Blog from './components/Blog';
 import Blogin from './components/Blogin';
 import BlogPost from './components/BlogPost';
+import CreateBlogPost from './components/CreateBlogPost';
 
 function App() {
   return <div className='flex flex-col w-screen max-w-screen min-h-screen overflow-y-scroll bg-white'>
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/new" element={<CreateBlogPost />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />

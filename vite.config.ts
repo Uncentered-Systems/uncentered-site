@@ -6,6 +6,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [
     UnoCSS(),
-    react(), 
+    react(),
   ],
+  server: {
+    proxy: {
+      '/api': {
+        target: (import.meta as any).IS_PROD ? 'https://localhost:8081' : 'http://localhost:8080',
+        changeOrigin: true,
+      }
+    }
+  }
 })

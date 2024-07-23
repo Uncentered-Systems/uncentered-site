@@ -6,7 +6,7 @@ const app = express()
 const sqlite3 = require('sqlite3').verbose()
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
-const slugify = require('./src/utils/slugify')
+const slugify = require('./src/utils/slugify.cjs')
 const fs = require('fs')
 const path = require('path')
 const multer = require('multer');
@@ -107,6 +107,7 @@ app.post('/api/blog/posts', authenticateToken, (req, res) => {
     ],
     (err) => {
       if (err) {
+        console.error(err)
         return res.status(500).send('error writing to db')
       }
       res.status(201).send({ success: true })
@@ -169,6 +170,7 @@ app.put('/api/blog/posts/:slug', authenticateToken, (req, res) => {
     ],
     (err) => {
       if (err) {
+        console.error(err)
         return res.status(500).send('error writing to db')
       }
       res.status(201).send('success')
@@ -193,6 +195,7 @@ app.post('/api/blog/images', authenticateToken, upload.single('file'), (req, res
       }
     } catch (error) {
       console.error('Error saving thumbnail: ', error)
+      res.status(500).send('error saving thumbnail')
     }
   } catch (error) {
     console.error(error)

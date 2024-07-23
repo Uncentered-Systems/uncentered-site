@@ -28,13 +28,14 @@ export default function BlogPost() {
 
     return (<>
         <NavBar />
-        <div className={cn('flex flex-col grow justify-center items-end self-start w-full', {
+        <div className={cn('flex flex-col grow justify-center items-end self-start max-w-[900px]', {
             'ml-16 p-8 gap-8': !isMobile,
             'py-4 gap-4': isMobile
         })}>
             {token && <div className="absolute top-0 right-0">
                 <button>Edit</button>
             </div>}
+            {postData?.headerImage && <img src={`/api/images/${postData.headerImage}`} alt={postData.title} className="w-full h-64" />}
             <h1 className={cn('self-end', {
                 'mr-4 text-4xl': isMobile,
                 'text-6xl': !isMobile,

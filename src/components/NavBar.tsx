@@ -14,6 +14,7 @@ export default function NavBar() {
                 <img src={logo} alt="Uncentered Systems" className="h-12 opacity-50" />
             </Link>
             <Link className='cursor-pointer text-gray' to="/">Home</Link>
+            <Link className='cursor-pointer text-gray' to="/blog">Blog</Link>
             <Link className='cursor-pointer text-gray' to="/projects">Projects</Link>
             <Link className='cursor-pointer text-gray' to="/contact">Contact</Link>
         </div>

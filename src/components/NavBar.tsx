@@ -4,7 +4,7 @@ import { isMobileCheck } from '../utils/dimensions';
 import cn from 'classnames'
 import useSiteStore from '../store/siteStore';
 
-export default function NavBar() {
+export default function NavBar({ suppressWordmark = false }) {
     const isMobile = isMobileCheck()
     const {token} = useSiteStore()
     return <div className={cn("flex items-center justify-between", {
@@ -22,7 +22,7 @@ export default function NavBar() {
             {token && <Link className='cursor-pointer text-gray' to="/blog">Blog</Link>}
             <Link className='cursor-pointer text-gray' to="/projects">Projects</Link>
             <Link className='cursor-pointer text-gray' to="/contact">Contact</Link>
-            {!isMobile && <img src='/Green Wordmark.svg' alt="Uncentered Systems" className="h-14 object-contain unrounded mx-auto" />}
+            {!isMobile && !suppressWordmark && <img src='/Green Wordmark.svg' alt="Uncentered Systems" className="h-12 object-contain unrounded mx-auto" />}
         </div>
     </div>
 }

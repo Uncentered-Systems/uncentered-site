@@ -5,7 +5,7 @@ import { isMobileCheck } from "../utils/dimensions";
 export default function Home() {
     const isMobile = isMobileCheck()
     return <>
-        <NavBar />
+        <NavBar suppressWordmark />
         <div className={cn('flex flex-col grow justify-center items-end self-start', {
             'ml-16 p-8 gap-8': !isMobile,
             'p-4 gap-4': isMobile

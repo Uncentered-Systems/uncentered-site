@@ -27,3 +27,6 @@ test/images
 public/images
 db.test.sqlite
 .vscode
+
+package-lock.json
+yarn.lock

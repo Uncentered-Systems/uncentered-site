@@ -154,13 +154,13 @@ ${post.content}`, { async: true }
                         type="text"
                         placeholder="Thumbnail Image"
                         value={post.thumbnailImage}
-                        onChange={(e) => setPost({ ...post, thumbnailImage: e.target.value.replace(/\/api\/images\/\/?/, '').trim() })}
+                        onChange={(e) => setPost({ ...post, thumbnailImage: e.target.value.replace(/^\/api\/images\/\/?/, '').trim() })}
                     />
                     <input
                         type="text"
                         placeholder="Header Image"
                         value={post.headerImage}
-                        onChange={(e) => setPost({ ...post, headerImage: e.target.value.replace(/\/api\/images\/\/?/, '').trim() })}
+                        onChange={(e) => setPost({ ...post, headerImage: e.target.value.replace(/^\/api\/images\/\/?/, '').trim() })}
                     />
                     <textarea
                         placeholder="Content"

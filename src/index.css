@@ -68,11 +68,11 @@ img {
 }
 
 .post-content img {
-    @apply  max-h-64 object-cover block mx-auto rounded-md shadow-md;
+    @apply  max-h-64 object-cover block mx-auto rounded-md shadow-md mb-4;
 }
 
 .post-content p {
-    @apply leading-6;
+    @apply leading-6 my-4;
 }
 
 .post-content ul, .post-content ol {

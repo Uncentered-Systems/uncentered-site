@@ -9,6 +9,10 @@ a {
     @apply decoration-none text-green;
 }
 
+a:hover {
+    @apply opacity-80;
+}
+
 button {
     @apply bg-green text-white font-bold p-2 rounded-md border-0 cursor-pointer hover:opacity-80;
 }
@@ -26,25 +30,59 @@ input[readonly] {
     @apply cursor-not-allowed;
 }
 
+h1.display {
+    font-family: 'Times New Roman', serif;
+    line-height: 0.8;
+    @apply uppercase font-normal text-right;
+}
+
+h2 { 
+    font-size: 32px;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    @apply text-green uppercase font-normal text-right leading-none;
-    font-family: 'Times New Roman', serif;
+    @apply text-green font-bold;
     letter-spacing: -0.03em;
 }
 
-img:not(.unrounded) {
-    @apply object-cover rounded-md shadow-md;
+img {
+ @apply max-w-full object-cover;
+}
+
+.post-content h1, 
+.post-content h2, 
+.post-content h3, 
+.post-content h4, 
+.post-content h5, 
+.post-content h6 {
+    @apply mt-6 mb-4;
+}
+
+.post-content hr {
+    @apply my-4;
 }
 
 .post-content img {
-    @apply max-w-full max-h-64 object-cover block mx-auto mb-8;
+    @apply  max-h-64 object-cover block mx-auto rounded-md shadow-md;
 }
 
 .post-content p {
-    @apply leading-6 mb-8;
+    @apply leading-6;
+}
+
+.post-content ul, .post-content ol {
+    @apply ml-4;
+}
+
+.post-content li {
+    @apply ml-8;
+}
+
+.post-content table td, .post-content table th {
+    @apply p-2;
 }

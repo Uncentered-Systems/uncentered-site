@@ -14,7 +14,11 @@ const config = {
   theme: {
     colors: {
       white: '#FFFCF5',
-      green: '#005e2f'
+      green: '#005d30',
+      gray: '#242d25',
+      grey: '#242d25',
+      black: '#0d1c10',
+      yellow: '#fff0af',
     }
   },
   transformers: [

@@ -16,7 +16,7 @@ export default function Contact() {
 
     return <>
         <NavBar />
-        <div className={cn("flex flex-col grow self-start", {
+        <div className={cn("flex flex-col grow items-center", {
             'p-8 gap-8': !isMobile,
             'p-4 gap-4': isMobile
         })}>
@@ -28,25 +28,28 @@ export default function Contact() {
                 'text-xl': !isMobile,
                 'text-lg': isMobile
             })}>
-            If you have any questions or feedback, please reach out.
-        </p>
-        <form className={cn("flex flex-col items-center gap-4", {
-            'w-[500px]': !isMobile,
-            'w-full': isMobile
-        })} onSubmit={onSubmit}>
-            <textarea
-                className="self-stretch min-h-[200px]"
-                placeholder="Message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-            />
-            <button
-                type="submit"
-                className="self-stretch cursor-pointer"
-            >
-                Submit
-            </button>
-        </form>
-    </div>
+                If you have any questions or feedback, please reach out.
+            </p>
+            <form className={cn("flex flex-col items-center gap-4", {
+                'w-[500px]': !isMobile,
+                'w-full': isMobile
+            })} onSubmit={onSubmit}>
+                <textarea
+                    className={cn("self-stretch ", {
+                        'min-w-[500px] min-h-[400px]': !isMobile,
+                        'w-full min-h-[200px]': isMobile
+                    })}
+                    placeholder="Message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                />
+                <button
+                    type="submit"
+                    className="self-stretch cursor-pointer"
+                >
+                    Submit
+                </button>
+            </form>
+        </div>
     </>
 }

@@ -18,6 +18,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/new" element={<CreateBlogPost />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/blog/:slug/edit" element={<CreateBlogPost editMode={true} />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Blogin />} />

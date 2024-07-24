@@ -4,14 +4,16 @@ import slugify from '../utils/slugify-ts'
 import useSiteStore from "../store/siteStore"
 import { marked } from 'marked'
 import { FaChevronDown, FaChevronRight } from "react-icons/fa6"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import NavBar from "./NavBar"
 import Chip from "./Chip"
 import dayjs from "dayjs"
 
-export default function CreateBlogPost() {
-    const { token, images, fetchImageFilenames } = useSiteStore()
+export default function CreateBlogPost({ editMode = false }) {
+    const { token, images, fetchImageFilenames, posts } = useSiteStore()
+    const { slug } = useParams()
     const nav = useNavigate()
+    const [editInitialized, setEditInitialized] = useState(false)
     const [post, setPost] = useState<Post>({
         title: '',
         content: '',
@@ -33,10 +35,25 @@ export default function CreateBlogPost() {
     }, [token])
 
     useEffect(() => {
-        setPost({
-            ...post,
-            slug: slugify(post.title)
-        })
+        if (editMode && !editInitialized) {
+            const editedPost = posts.find(p => p.slug === slug)
+            if (editedPost) {
+                setPost(editedPost)
+                setEditInitialized(true)
+            } else {
+                alert('Could not find post with slug ' + slug + '.')
+                nav('/blog')
+            }
+        }
+    }, [editMode, post])
+
+    useEffect(() => {
+        if (!editMode) {
+            setPost({
+                ...post,
+                slug: slugify(post.title)
+            })
+        }
     }, [post.title])
 
     useEffect(() => {
@@ -55,8 +72,8 @@ ${post.content}`, { async: true }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        fetch(`/api/blog/posts`, {
-            method: 'POST',
+        fetch(`/api/blog/posts${editMode ? '/' + post.slug : ''}`, {
+            method: editMode ? 'PUT' : 'POST',
             headers: {
                 accepts: 'application/json',
                 'content-type': 'application/json',
@@ -74,7 +91,7 @@ ${post.content}`, { async: true }
         })
             .then((data) => {
                 if (data.status === 201) {
-                    alert('Post created successfully!');
+                    alert(editMode ? 'Post updated successfully!' : 'Post created successfully!');
                     console.log({ data })
                     nav('/blog');
                 } else {
@@ -116,7 +133,13 @@ ${post.content}`, { async: true }
         <NavBar />
         <div className="flex gap-4 grow">
             <div className="flex flex-col gap-4 w-1/2 p-8">
-                <h1>Create Blog Post</h1>
+                <button 
+                    onClick={() => nav('/blog')}
+                    className="self-start"
+                >
+                    Back
+                </button>
+                <h1>{editMode ? 'Edit Blog Post' : 'Create Blog Post'}</h1>
                 <form
                     onSubmit={handleSubmit}
                     className="flex flex-col gap-4 grow"
@@ -145,6 +168,7 @@ ${post.content}`, { async: true }
                         className="grow"
                         onChange={(e) => setPost({ ...post, content: e.target.value })}
                     />
+                    {editMode && <div className="text-sm">Slug cannot be edited.</div>}
                     <input
                         type="text"
                         placeholder="Slug"
@@ -157,7 +181,9 @@ ${post.content}`, { async: true }
                         value={post.tags}
                         onChange={(e) => setPost({ ...post, tags: e.target.value })}
                     />
-                    <button>Create</button>
+                    <button>
+                        {editMode ? 'Update' : 'Create'}
+                    </button>
                 </form>
                 <div className="flex flex-col gap-4">
                     <div
@@ -185,7 +211,8 @@ ${post.content}`, { async: true }
                             : <p className="ml-4">No images uploaded</p>
                         }
                         <div className='flex flex-wrap gap-4 overflow-y-auto ml-8 p-4'>
-                            {images.filter(i => i).map((image) => <img
+                            {images.filter(i => i).map((image, i) => <img
+                                key={i}
                                 src={`/api/images/${image}`}
                                 className='w-32 h-32 cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-100'
                                 onClick={() => setPost({ ...post, content: `${post.content}\n<img src="/api/images/${image}" />` })}
@@ -215,7 +242,7 @@ ${post.content}`, { async: true }
                     </h2> : <h2>WARNING: No header image!</h2>}
                 </div>
 
-                <div dangerouslySetInnerHTML={{ __html: markdownContent }} />
+                <div className="post-content" dangerouslySetInnerHTML={{ __html: markdownContent }} />
 
                 <div className="flex-center flex-wrap gap-2 self-start">
                     {post.tags?.split(', ').map((tag, i) => <Chip text={tag} key={i} />)}

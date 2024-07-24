@@ -10,12 +10,12 @@ export default function Home() {
             'ml-16 p-8 gap-8': !isMobile,
             'p-4 gap-4': isMobile
         })}>
-            <h1 className={cn('self-end', {
+            <h1 className={cn('self-end display', {
                 'text-4xl': isMobile,
                 'text-6xl': !isMobile,
             })}>
                 Uncentered <br/> Systems
-                <span className="text-xs">&reg;</span>
+                <span className="text-xs ml-1 -mr-4">&trade;</span>
             </h1>
             <p className={cn("text-justify", {
                 'w-[500px] text-lg': !isMobile,

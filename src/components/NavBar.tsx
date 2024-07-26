@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
 import { isMobileCheck } from '../utils/dimensions';
 import cn from 'classnames'
-import useSiteStore from '../store/siteStore';
 
 export default function NavBar({ suppressWordmark = false }) {
     const isMobile = isMobileCheck()

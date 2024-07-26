@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
 import { isMobileCheck } from '../utils/dimensions';
 import cn from 'classnames'
+import useSiteStore from '../store/siteStore';
 
 export default function NavBar({ suppressWordmark = false }) {
     const isMobile = isMobileCheck()
+    const { token } = useSiteStore()
     return <div className={cn("flex items-center justify-between", {
         "p-8": !isMobile,
         "p-4": isMobile
@@ -18,7 +20,7 @@ export default function NavBar({ suppressWordmark = false }) {
             </Link>
             <Link className='cursor-pointer text-gray' to="/">Home</Link>
             <Link className='cursor-pointer text-gray' to="/projects">Projects</Link>
-            <Link className='cursor-pointer text-gray' to="/blog">Blog</Link>
+            {token ? <Link className='cursor-pointer text-gray' to="/blog">Blog</Link> : <></>}
             <Link className='cursor-pointer text-gray' to="/contact">Contact</Link>
             {!isMobile && !suppressWordmark && <img src='/Green Wordmark.svg' alt="Uncentered Systems" className="h-12 object-contain unrounded ml-auto" />}
         </div>

@@ -21,21 +21,21 @@ const PROJECTS = [
 ]
 
 const PARTNERS = [
-    { 
+    {
         title: 'MemeDeck',
         description: 'The ultimate AI-powered meme generation platform. Users can create based, viral memes in seconds. No design skills required - you just need your imagination.',
-        image: '/memedeck.png',
+        image: '/memedeck-tr.png',
     },
     {
         title: 'Kinode',
         description: 'Kinode OS combines the power of decentralized infrastructure with the flexibility of personal computing.',
-        image: '/kinode.png'
+        image: '/kinode-tr.png'
     }
 ]
 
 function ProjectPartnerCard({ project }: { project: { title: string, description: string, image: string } }) {
     const isMobile = isMobileCheck()
-    return <div 
+    return <div
         className={cn("flex bg-gray/10 rounded-md backdrop-blur-sm", {
             'w-full gap-4 p-4': isMobile,
             'w-[45%] gap-8 p-8 self-stretch': !isMobile
@@ -65,11 +65,11 @@ export default function Projects() {
             'p-8 gap-8': !isMobile,
             'p-4 gap-4': isMobile
         })}>
-            <h1 className={cn({
+            <h1 className={cn('text-right', {
                 'text-4xl': !isMobile,
                 'text-2xl': isMobile
             })}>Projects</h1>
-            <div className={cn("flex flex-wrap", {
+            <div className={cn("flex flex-wrap justify-end", {
                 'gap-4': isMobile,
                 'gap-8': !isMobile
             })}>
@@ -77,11 +77,11 @@ export default function Projects() {
                     <ProjectPartnerCard key={index} project={project} />
                 ))}
             </div>
-            <h2 className={cn({
+            <h2 className={cn('text-right', {
                 'text-4xl': !isMobile,
                 'text-2xl': isMobile
             })}>Strategic Partners</h2>
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap gap-8 justify-end">
                 {PARTNERS.map((partner, index) => (
                     <ProjectPartnerCard project={partner} key={index} />
                 ))}

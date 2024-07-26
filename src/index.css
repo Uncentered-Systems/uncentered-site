@@ -36,7 +36,7 @@ h1.display {
     @apply uppercase font-normal text-right;
 }
 
-h2 { 
+h2 {
     font-size: 32px;
 }
 
@@ -51,14 +51,14 @@ h6 {
 }
 
 img {
- @apply max-w-full object-cover;
+    @apply max-w-full object-cover;
 }
 
-.post-content h1, 
-.post-content h2, 
-.post-content h3, 
-.post-content h4, 
-.post-content h5, 
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
 .post-content h6 {
     @apply mt-6 mb-4;
 }
@@ -68,14 +68,15 @@ img {
 }
 
 .post-content img {
-    @apply  max-h-64 object-cover block mx-auto rounded-md shadow-md mb-4;
+    @apply max-h-64 object-cover block mx-auto rounded-md shadow-md mb-4;
 }
 
 .post-content p {
     @apply leading-6 my-4;
 }
 
-.post-content ul, .post-content ol {
+.post-content ul,
+.post-content ol {
     @apply ml-4;
 }
 
@@ -83,6 +84,7 @@ img {
     @apply ml-8;
 }
 
-.post-content table td, .post-content table th {
+.post-content table td,
+.post-content table th {
     @apply p-2;
 }

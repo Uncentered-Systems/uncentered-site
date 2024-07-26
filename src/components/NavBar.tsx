@@ -6,12 +6,11 @@ import useSiteStore from '../store/siteStore';
 
 export default function NavBar({ suppressWordmark = false }) {
     const isMobile = isMobileCheck()
-    const {token} = useSiteStore()
     return <div className={cn("flex items-center justify-between", {
         "p-8": !isMobile,
         "p-4": isMobile
     })}>
-        <div className={cn("flex items-center w-3/4", {
+        <div className={cn("flex items-center w-full", {
             'gap-4 flex-wrap': isMobile,
             'gap-8': !isMobile
         })}>
@@ -19,10 +18,10 @@ export default function NavBar({ suppressWordmark = false }) {
                 <img src={logo} alt="Uncentered Systems" className="h-12 unrounded" />
             </Link>
             <Link className='cursor-pointer text-gray' to="/">Home</Link>
-            {token && <Link className='cursor-pointer text-gray' to="/blog">Blog</Link>}
             <Link className='cursor-pointer text-gray' to="/projects">Projects</Link>
+            <Link className='cursor-pointer text-gray' to="/blog">Blog</Link>
             <Link className='cursor-pointer text-gray' to="/contact">Contact</Link>
-            {!isMobile && !suppressWordmark && <img src='/Green Wordmark.svg' alt="Uncentered Systems" className="h-12 object-contain unrounded mx-auto" />}
+            {!isMobile && !suppressWordmark && <img src='/Green Wordmark.svg' alt="Uncentered Systems" className="h-12 object-contain unrounded ml-auto" />}
         </div>
     </div>
 }

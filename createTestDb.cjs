@@ -15,7 +15,8 @@ db.serialize(() => {
         headerImage TEXT, 
         thumbnailImage TEXT,
         tags TEXT,
-        deleted INTEGER
+        deleted INTEGER,
+        byline TEXT
     )`)
 
     // drop old users table

@@ -26,20 +26,26 @@ export default function BlogPostCard(props: { postData: Post }) {
                 nav(`/blog/${postData.slug}`)
             }}
         >
-            <img 
-                src={`/api/images/${postData.thumbnailImage}`} 
-                alt={postData.title} 
-                className={cn('grow rounded-md', {
+            <img
+                src={`/api/images/${postData.thumbnailImage}`}
+                alt={postData.title}
+                className={cn('grow rounded-md object-contain', {
                     'max-h-64 max-w-64': !isMobile,
                     'max-h-32': isMobile,
                     'hue-rotate-180': postData.deleted
-                })} 
+                })}
             />
             {postData.deleted ? <button className='absolute bg-green top-8 right-8'>Deleted</button> : <></>}
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 grow'>
                 <h1>{postData.title}{postData.deleted ? <span className='text-red-500'> (Deleted)</span> : <></>}</h1>
                 <p>{dayjs(postData.date).format('MMMM D, YYYY')}</p>
-                <div dangerouslySetInnerHTML={{ __html: markedPost.substring(0, 140) + (markedPost.length > 140 ? '...' : '') }} />
+                {postData.byline
+                    ? <p>{postData.byline}</p>
+                    : <div
+                        dangerouslySetInnerHTML={{
+                            __html: markedPost.substring(0, 140) + (markedPost.length > 140 ? '...' : '')
+                        }}
+                    />}
                 <div className='flex items-center flex-wrap gap-4'>
                     {postData.tags?.split(',').filter((tag: string) => tag !== '').map((tag: string, i: number) => <Chip text={tag} key={i} />)}
                 </div>

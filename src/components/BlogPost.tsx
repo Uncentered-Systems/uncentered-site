@@ -55,48 +55,48 @@ export default function BlogPost() {
     }, [posts, slug])
 
 
-  const onDeletePost = () => {
-    if (window.confirm('Are you sure you want to delete this post?')) {
-      fetch(`/api/blog/posts/${slug}`, {
-        method: 'DELETE',
-        headers: {
-          'content-type': 'application/json',
-          'authorization': `Bearer ${token}`
+    const onDeletePost = () => {
+        if (window.confirm('Are you sure you want to delete this post?')) {
+            fetch(`/api/blog/posts/${slug}`, {
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${token}`
+                }
+            })
+                .then(data => {
+                    console.log({ data })
+                    alert('Post deleted.')
+                    nav('/blog')
+                })
+                .catch(err => {
+                    console.log(err)
+                    alert('Something went wrong. Please try again.')
+                })
         }
-      })
-        .then(data => {
-          console.log({ data })
-          alert('Post deleted.')
-          nav('/blog')
-        })
-        .catch(err => {
-          console.log(err)
-          alert('Something went wrong. Please try again.')
-        })
     }
-  }
 
-  const onUndeletePost = () => {
-    if (postData && window.confirm('Are you sure you want to undelete this post?')) {
-      fetch(`/api/blog/posts/${slug}`, {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json',
-          'authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({ ...postData, deleted: 0 })
-      })
-        .then(data => {
-          console.log({ data })
-          alert('Post undeleted.')
-          nav('/blog')
-        })
-        .catch(err => {
-          console.log(err)
-          alert('Something went wrong. Please try again.')
-        })
+    const onUndeletePost = () => {
+        if (postData && window.confirm('Are you sure you want to undelete this post?')) {
+            fetch(`/api/blog/posts/${slug}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ ...postData, deleted: 0 })
+            })
+                .then(data => {
+                    console.log({ data })
+                    alert('Post undeleted.')
+                    nav('/blog')
+                })
+                .catch(err => {
+                    console.log(err)
+                    alert('Something went wrong. Please try again.')
+                })
+        }
     }
-  }
 
     return (<>
         <NavBar />
@@ -106,19 +106,19 @@ export default function BlogPost() {
         })}>
             {token && <div className="fixed bottom-8 right-8 flex gap-4">
                 <button onClick={() => nav(`/blog/${slug}/edit`)}>Edit</button>
-                {postData?.deleted 
-                    ? <button onClick={() => onUndeletePost()}>Undelete</button> 
+                {postData?.deleted
+                    ? <button onClick={() => onUndeletePost()}>Undelete</button>
                     : <button onClick={() => onDeletePost()}>Delete</button>}
             </div>}
-            <button 
+            <button
                 onClick={() => nav('/blog')}
                 className="self-start"
             >
                 Back
             </button>
-            {postData?.headerImage && <img 
-                src={`/api/images/${postData.headerImage}`} 
-                alt={postData.title} 
+            {postData?.headerImage && <img
+                src={`/api/images/${postData.headerImage}`}
+                alt={postData.title}
                 className={cn('h-64 w-full', {
                 })}
             />}
@@ -128,12 +128,13 @@ export default function BlogPost() {
             })}>
                 {postData?.title}{postData?.deleted ? <span className='text-red-500'> (Deleted)</span> : <></>}
             </h1>
-            <div className={cn('flex items-center gap-2', { 
-                'flex-wrap mx-4': isMobile 
+            <div className={cn('flex items-center gap-2', {
+                'flex-wrap mx-4': isMobile
             })}>
                 {postData?.tags?.split(',').filter((tag: string) => tag !== '').map((tag: string, i: number) => <Chip text={tag} key={i} />)}
                 <p>{dayjs(postData?.date).format('MMMM D, YYYY')}</p>
             </div>
+            {postData?.byline ? <p>{postData.byline}</p> : <></>}
             <div
                 dangerouslySetInnerHTML={{ __html: postMarkdown }}
                 className={cn('post-content', {

@@ -22,6 +22,7 @@ export default function CreateBlogPost({ editMode = false }) {
         thumbnailImage: '',
         headerImage: '',
         tags: '',
+        byline: '',
     })
     const [uploadImagesExpanded, setUploadImagesExpanded] = useState(true);
     const [imageFile, setImageFile] = useState<File | undefined>(undefined);
@@ -87,6 +88,7 @@ ${post.content}`, { async: true }
                 slug: post.slug,
                 tags: post.tags,
                 date: +dayjs(post.date || new Date()).toDate(),
+                byline: post.byline,
             }),
         })
             .then((data) => {
@@ -133,7 +135,7 @@ ${post.content}`, { async: true }
         <NavBar />
         <div className="flex gap-4 grow">
             <div className="flex flex-col gap-4 w-1/2 p-8">
-                <button 
+                <button
                     onClick={() => nav('/blog')}
                     className="self-start"
                 >
@@ -161,6 +163,11 @@ ${post.content}`, { async: true }
                         placeholder="Header Image"
                         value={post.headerImage}
                         onChange={(e) => setPost({ ...post, headerImage: e.target.value.replace(/^\/api\/images\/\/?/, '').trim() })}
+                    />
+                    <textarea
+                        placeholder="Byline"
+                        value={post.byline}
+                        onChange={(e) => setPost({ ...post, byline: e.target.value })}
                     />
                     <textarea
                         placeholder="Content"
@@ -241,6 +248,9 @@ ${post.content}`, { async: true }
                             src={`/api/images/${post.headerImage}`} />
                     </h2> : <h2>WARNING: No header image!</h2>}
                 </div>
+
+                <h4> Byline: </h4>
+                <p className="self-end">{post.byline || 'NONE'}</p>
 
                 <div className="post-content" dangerouslySetInnerHTML={{ __html: markdownContent }} />
 

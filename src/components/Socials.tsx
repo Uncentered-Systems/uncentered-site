@@ -23,18 +23,18 @@ export default function Socials() {
         'p-8': !isMobile,
         'p-4': isMobile
     })}>
-    {SOCIALS.map((social, index) => (
-        <a 
-            href={social.url} 
-            target="_blank"
-            className={cn("text-gray", {
-                'text-2xl': !isMobile,
-                'text-xl': isMobile
-            })}
-            key={index}
-        >
-            <social.icon />
-        </a>
-    ))}
-  </div>
+        {SOCIALS.map((social, index) => (
+            <a
+                href={social.url}
+                target="_blank"
+                className={cn("text-gray/50", {
+                    'text-2xl': !isMobile,
+                    'text-xl': isMobile
+                })}
+                key={index}
+            >
+                <social.icon />
+            </a>
+        ))}
+    </div>
 }

@@ -7,5 +7,6 @@ export interface Post {
     content: string
     deleted?: number
     tags?: string
+    byline?: string
 }
 

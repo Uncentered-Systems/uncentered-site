@@ -134,7 +134,6 @@ export default function BlogPost() {
                 {postData?.tags?.split(',').filter((tag: string) => tag !== '').map((tag: string, i: number) => <Chip text={tag} key={i} />)}
                 <p className="ml-auto">{dayjs(postData?.date).format('MMMM D, YYYY')}</p>
             </div>
-            {postData?.byline ? <p>{postData.byline}</p> : <></>}
             <div
                 dangerouslySetInnerHTML={{ __html: postMarkdown }}
                 className={cn('post-content', {

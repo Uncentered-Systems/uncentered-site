@@ -100,7 +100,7 @@ export default function BlogPost() {
 
     return (<>
         <NavBar />
-        <div className={cn('flex flex-col grow justify-center items-end self-start gap-4', {
+        <div className={cn('flex flex-col grow justify-center self-start gap-4', {
             'ml-16 p-8 max-w-[900px]': !isMobile,
             'max-w-screen': isMobile
         })}>
@@ -122,7 +122,7 @@ export default function BlogPost() {
                 className={cn('h-64 w-full', {
                 })}
             />}
-            <h1 className={cn('self-end', {
+            <h1 className={cn({
                 'mx-4 text-4xl': isMobile,
                 'mr-4 text-6xl': !isMobile,
             })}>
@@ -132,7 +132,7 @@ export default function BlogPost() {
                 'flex-wrap mx-4': isMobile
             })}>
                 {postData?.tags?.split(',').filter((tag: string) => tag !== '').map((tag: string, i: number) => <Chip text={tag} key={i} />)}
-                <p>{dayjs(postData?.date).format('MMMM D, YYYY')}</p>
+                <p className="ml-auto">{dayjs(postData?.date).format('MMMM D, YYYY')}</p>
             </div>
             {postData?.byline ? <p>{postData.byline}</p> : <></>}
             <div

@@ -66,7 +66,7 @@ export default function Projects() {
             'p-4 gap-4': isMobile
         })}>
             <h1 className={cn('text-right', {
-                'text-4xl': !isMobile,
+                'text-5xl': !isMobile,
                 'text-2xl': isMobile
             })}>Projects</h1>
             <div className={cn("flex flex-wrap justify-end", {
@@ -78,7 +78,7 @@ export default function Projects() {
                 ))}
             </div>
             <h2 className={cn('text-right', {
-                'text-4xl': !isMobile,
+                'text-5xl': !isMobile,
                 'text-2xl': isMobile
             })}>Strategic Partners</h2>
             <div className="flex flex-wrap gap-8 justify-end">

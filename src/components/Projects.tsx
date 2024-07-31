@@ -62,7 +62,7 @@ export default function Projects() {
     return <>
         <NavBar />
         <div className={cn("flex flex-col justify-center grow self-stretch", {
-            'p-8 gap-8': !isMobile,
+            'p-8 gap-8 max-w-[1200px]': !isMobile,
             'p-4 gap-4': isMobile
         })}>
             <h1 className={cn('text-right', {

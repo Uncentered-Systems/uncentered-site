@@ -4,6 +4,11 @@ import { isMobileCheck } from "../utils/dimensions";
 
 const PROJECTS = [
     {
+        title: 'Valet',
+        description: 'Valet is an all-in-one hosting suite for managing a set of Kinode instances.',
+        image: '/valet.png'
+    },
+    {
         title: 'Barter',
         description: 'A tool for selling your NFTs through Telegram via a gamified AI assistant chat. Uses Kinode to integrate your wallets, your chats, and your LLM assistants.',
         image: '/barter.png'

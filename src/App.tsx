@@ -8,6 +8,7 @@ import Blog from './components/Blog';
 import Blogin from './components/Blogin';
 import BlogPost from './components/BlogPost';
 import CreateBlogPost from './components/CreateBlogPost';
+import SignUpForWaitlist from './components/SignupForWaitlist';
 
 function App() {
   return <div className='flex flex-col w-screen max-w-screen min-h-screen overflow-y-scroll bg-white'>
@@ -22,6 +23,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Blogin />} />
+        <Route path="/waitlist" element={<SignUpForWaitlist />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>

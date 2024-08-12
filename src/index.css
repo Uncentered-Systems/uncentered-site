@@ -88,3 +88,7 @@ img {
 .post-content table th {
     @apply p-2;
 }
+
+.post-content a {
+    @apply font-bold;
+}

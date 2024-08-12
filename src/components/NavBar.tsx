@@ -20,6 +20,7 @@ export default function NavBar({ suppressWordmark = false }) {
             <Link className='cursor-pointer text-gray' to="/projects">Projects</Link>
             <Link className='cursor-pointer text-gray' to="/blog">Blog</Link>
             <Link className='cursor-pointer text-gray' to="/contact">Contact</Link>
+            <Link className='cursor-pointer text-gray' to="https://valet.uncentered.systems">Valet</Link>
             {!isMobile && !suppressWordmark && <img src='/Green Wordmark.svg' alt="Uncentered Systems" className="h-12 object-contain unrounded ml-auto" />}
         </div>
     </div>

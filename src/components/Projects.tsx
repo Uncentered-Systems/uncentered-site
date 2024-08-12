@@ -1,12 +1,14 @@
 import NavBar from "./NavBar";
 import cn from 'classnames'
 import { isMobileCheck } from "../utils/dimensions";
+import { FaLink } from "react-icons/fa6";
 
 const PROJECTS = [
     {
         title: 'Valet',
         description: 'Valet is an all-in-one hosting suite for managing a set of Kinode instances.',
-        image: '/valet.png'
+        image: '/valet.png',
+        link: 'https://valet.uncentered.systems'
     },
     {
         title: 'Barter',
@@ -38,10 +40,10 @@ const PARTNERS = [
     }
 ]
 
-function ProjectPartnerCard({ project }: { project: { title: string, description: string, image: string } }) {
+function ProjectPartnerCard({ project }: { project: { title: string, description: string, image: string, link?: string } }) {
     const isMobile = isMobileCheck()
     return <div
-        className={cn("flex bg-gray/10 rounded-md backdrop-blur-sm", {
+        className={cn("flex bg-gray/10 rounded-md backdrop-blur-sm relative", {
             'w-full gap-4 p-4': isMobile,
             'w-[45%] gap-8 p-8 self-stretch': !isMobile
         })}
@@ -54,7 +56,18 @@ function ProjectPartnerCard({ project }: { project: { title: string, description
             <h2 className={cn({
                 'text-2xl': !isMobile,
                 'text-xl': isMobile
-            })}>{project.title}</h2>
+            })}>
+                {project.link ? <a 
+                    href={project.link} 
+                    target="_blank"
+                    className="flex items-center gap-2"
+                >
+                    <span>{project.title}</span>
+                    <FaLink className="text-2xl" />
+                </a> : <>
+                    {project.title}
+                </>}
+            </h2>
             <p className={cn({
                 'text-lg': !isMobile
             })}>{project.description}</p>

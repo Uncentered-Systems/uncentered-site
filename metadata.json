@@ -7,7 +7,8 @@
         "current_version": "0.1.0",
         "publisher": "uncentered.os",
         "mirrors": [
-          "some-sweet-moniker.os"
+          "some-sweet-moniker.os",
+          "tantum-ergo.os"
         ],
         "code_hashes": {
             "0.1.0": "1c772349abb662227540b12e98351c19f1e605bfbf296ea8f0d8c923eda4e371"

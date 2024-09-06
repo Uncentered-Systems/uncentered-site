@@ -17,7 +17,8 @@
             "0.3.0": "e50f36a213444102130a2b3c78fe9586b13a9dfcedba08bf6eb4fbd05361435c",
             "0.3.1": "d327ba30c7e07e5f8616c7d43571ba3302a6464f9b7952a94e63a988ca6982b3",
             "0.3.2": "e4733f42c541750b172a88299fc6b0d8ad8850c9a61e50a0d0c151a2d6a5fed7",
-            "0.3.3": "d83525e9a203ec9dbbb1e68df95ff54d3425b549ff2655e863bb42bf3bd44b33"
+            "0.3.3": "d83525e9a203ec9dbbb1e68df95ff54d3425b549ff2655e863bb42bf3bd44b33",
+            "0.3.4": "3fb10edb7a54290d920bd7e8ec1e96238adc1b13c72ceecbb66783d7edc899fe"
         },
         "wit_version": 0,
         "dependencies": []

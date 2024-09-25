@@ -19,7 +19,8 @@
             "0.3.17": "53a1c0439c0819624ec768f45002eab818a771f085246490c7d6bd5937e69ac3",
             "0.3.18": "4d9cb04b05d7b4fe127a210e9521d03f4f61ba77f337976f599c1dd34dba5f83",
             "0.3.19": "9bbc6d738e8823f0dcf1f1a6bd936a26238a4b21d01ef0c206059f8917322cd7",
-            "0.3.20": "02b746bbc63407d5d587aa47cdabb0876a8f09a76beedc74093232bdfd0313c1"
+            "0.3.20": "02b746bbc63407d5d587aa47cdabb0876a8f09a76beedc74093232bdfd0313c1",
+            "0.3.21": "2df09f7dd9899320fcfb5e993ce181756d3e3c4c0b5cf084e730ae94be525233"
         },
         "wit_version": 0,
         "dependencies": []

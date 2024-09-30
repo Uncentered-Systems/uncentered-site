@@ -12,17 +12,11 @@
             "tantum-ergo.os"
         ],
         "code_hashes": {
-            "0.3.13": "b2578b13547f81f8dc21a4a0a40f910170fd0e15074aea9c2ac1caa52067dc98",
-            "0.3.14": "3e8c7a81e5183e39e54ab5097b710ae438c9def2076f609daa2aaa317aeb4caf",
-            "0.3.15": "bd78dc1eebc4d35d68b56ebadd9ed07c0b33f1ff596016876821f37e49186437",
-            "0.3.16": "84ce75a59b7e8f538e7d53127371960915cf6df6acb895877445c49b9f2128e0",
-            "0.3.17": "53a1c0439c0819624ec768f45002eab818a771f085246490c7d6bd5937e69ac3",
-            "0.3.18": "4d9cb04b05d7b4fe127a210e9521d03f4f61ba77f337976f599c1dd34dba5f83",
-            "0.3.19": "9bbc6d738e8823f0dcf1f1a6bd936a26238a4b21d01ef0c206059f8917322cd7",
             "0.3.20": "02b746bbc63407d5d587aa47cdabb0876a8f09a76beedc74093232bdfd0313c1",
             "0.3.21": "2df09f7dd9899320fcfb5e993ce181756d3e3c4c0b5cf084e730ae94be525233",
             "0.3.22": "7cdb3bb5bbe705d3a91736a31f0146359d32256d9b477d4466c434f8a4bea8ae",
-            "0.3.23": "d5774ab2166db3a20705bc6933d57371f10a6e7f8c31dbc8bb4ffc3aff2c844f"
+            "0.3.23": "d5774ab2166db3a20705bc6933d57371f10a6e7f8c31dbc8bb4ffc3aff2c844f",
+            "0.3.24": "32b6bb65c991447137e12155a15be44af8a37f0622cc7665245046e71cd2efd4"
         },
         "wit_version": 0,
         "dependencies": []

@@ -12,9 +12,8 @@
             "tantum-ergo.os"
         ],
         "code_hashes": {
-            "0.4.0": "42434a523a1f589329fd900a667defda0574c7fcc48c88c8587aa5ad981c0a22",
-            "0.4.1": "3b8472929c25f1e59cdf18ae4a8721e9c524254f4ba1fdc1a26fbcd53946d94e",
-            "0.4.15": "8bd3911dd24449dcd64bf5de788ce05b22a3dcb53d3921401a3497d2406f072a"
+            "0.4.15": "8bd3911dd24449dcd64bf5de788ce05b22a3dcb53d3921401a3497d2406f072a",
+            "0.4.20": "de37e41a726ac551b8fc012f641a5d1dcce18774580283beae598c81a2b7064e"
         },
         "wit_version": 0,
         "dependencies": []

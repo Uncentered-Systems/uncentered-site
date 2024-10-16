@@ -13,7 +13,8 @@
         ],
         "code_hashes": {
             "0.4.15": "8bd3911dd24449dcd64bf5de788ce05b22a3dcb53d3921401a3497d2406f072a",
-            "0.4.20": "de37e41a726ac551b8fc012f641a5d1dcce18774580283beae598c81a2b7064e"
+            "0.4.20": "de37e41a726ac551b8fc012f641a5d1dcce18774580283beae598c81a2b7064e",
+            "0.4.21": "a8e98e61ccb02b605abfe5fe5bdb3aeb0ff7a8886e12779c694c14b26e34055a"
         },
         "wit_version": 0,
         "dependencies": []

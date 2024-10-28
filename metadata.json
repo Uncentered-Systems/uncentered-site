@@ -1,23 +1,24 @@
 {
-  "name": "dial",
-  "description": "read and curate the best content from anywhere",
-  "image": "https://raw.githubusercontent.com/0x70b1a5/uncentered-site/refs/heads/master/public/favicon.png",
-  "properties": {
-    "package_name": "dial",
-    "current_version": "0.1.5",
-    "publisher": "uncentered.os",
-    "mirrors": [
-      "uncentered.os",
-      "some-sweet-moniker.os",
-      "tantum-ergo.os"
-    ],
-    "code_hashes": {
-      "0.1.4": "b6796fb3a2003554555d3d12ac82c03f86f5a6e7f825be9001518773f7ec7efe",
-      "0.1.5": "a0024b2ab9e36f14b3cb157424acc7f26f01608ffb44302ec62bc3151da076fb"
+    "name": "dial",
+    "description": "read and curate the best content from anywhere",
+    "image": "https://raw.githubusercontent.com/0x70b1a5/uncentered-site/refs/heads/master/public/favicon.png",
+    "properties": {
+        "package_name": "dial",
+        "current_version": "0.1.6",
+        "publisher": "uncentered.os",
+        "mirrors": [
+            "uncentered.os",
+            "some-sweet-moniker.os",
+            "tantum-ergo.os"
+        ],
+        "code_hashes": {
+            "0.1.4": "b6796fb3a2003554555d3d12ac82c03f86f5a6e7f825be9001518773f7ec7efe",
+            "0.1.5": "a0024b2ab9e36f14b3cb157424acc7f26f01608ffb44302ec62bc3151da076fb",
+            "0.1.6": "6e839a72e14030c40ea1913d7aa01d83ed336104e45a245657acc0cd7692548b"
+        },
+        "wit_version": 0,
+        "dependencies": []
     },
-    "wit_version": 0,
-    "dependencies": []
-  },
-  "external_url": "",
-  "animation_url": ""
+    "external_url": "",
+    "animation_url": ""
 }

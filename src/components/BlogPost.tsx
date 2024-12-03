@@ -18,40 +18,42 @@ export default function BlogPost() {
     const [previousPost, setPreviousPost] = useState<Post | null>(null)
     const [nextPost, setNextPost] = useState<Post | null>(null)
     const isMobile = isMobileCheck()
-    const { token, posts } = useSiteStore()
+    const { token, posts, fetchPosts } = useSiteStore()
 
     useEffect(() => {
-        const postIndex = posts.findIndex((post) => post.slug === slug)
-        if (postIndex !== -1) {
-            const postData = posts[postIndex]
-            if (postIndex > 0) {
-                if (!posts[postIndex - 1].deleted) {
-                    setPreviousPost(posts[postIndex - 1])
-                } else if (postIndex > 1) {
-                    setPreviousPost(posts[postIndex - 2])
+        fetchPosts().then((posts) => {
+            const postIndex = posts.findIndex((post) => post.slug === slug)
+            if (postIndex !== -1) {
+                const postData = posts[postIndex]
+                if (postIndex > 0) {
+                    if (!posts[postIndex - 1].deleted) {
+                        setPreviousPost(posts[postIndex - 1])
+                    } else if (postIndex > 1) {
+                        setPreviousPost(posts[postIndex - 2])
+                    } else {
+                        setPreviousPost(null)
+                    }
                 } else {
                     setPreviousPost(null)
                 }
-            } else {
-                setPreviousPost(null)
-            }
-            if (postIndex < posts.length - 1) {
-                if (!posts[postIndex + 1].deleted) {
-                    setNextPost(posts[postIndex + 1])
-                } else if (postIndex < posts.length - 2) {
-                    setNextPost(posts[postIndex + 2])
+                if (postIndex < posts.length - 1) {
+                    if (!posts[postIndex + 1].deleted) {
+                        setNextPost(posts[postIndex + 1])
+                    } else if (postIndex < posts.length - 2) {
+                        setNextPost(posts[postIndex + 2])
+                    } else {
+                        setNextPost(null)
+                    }
                 } else {
                     setNextPost(null)
                 }
+                const content = marked(postData.content) as string
+                setPostMarkdown(content)
+                setPostData(postData)
             } else {
-                setNextPost(null)
+                nav('/blog')
             }
-            const content = marked(postData.content) as string
-            setPostMarkdown(content)
-            setPostData(postData)
-        } else {
-            nav('/blog')
-        }
+        })
     }, [posts, slug])
 
 

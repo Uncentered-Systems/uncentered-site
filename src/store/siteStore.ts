@@ -13,7 +13,7 @@ interface SiteStore {
     setPosts: (posts: Post[]) => void
     postBeingEdited: Post | undefined
     setPostBeingEdited: (post: Post | undefined) => void
-    fetchPosts: () => void
+    fetchPosts: () => Promise<Post[]>
     onLogout: () => void
 }
 const useSiteStore = create<SiteStore>()((set, get) => ({
@@ -39,12 +39,12 @@ const useSiteStore = create<SiteStore>()((set, get) => ({
         if (token) {
             headers['authorization'] = `Bearer ${token}`
         }
-        fetch('/api/blog/posts', { headers })
-            .then(data => data.json())
-            .then(data => {
-                console.log('GOT DATA', data)
-                setPosts(data?.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()))
-            })
+        const data = await fetch('/api/blog/posts', { headers })
+        const jsonData = await data.json()
+        console.log('GOT DATA', jsonData);
+        const posts = jsonData?.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
+        setPosts(posts)
+        return posts
     },
     onLogout: () => {
         set({ token: '' })

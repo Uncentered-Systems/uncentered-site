@@ -14,6 +14,7 @@ interface SiteStore {
     postBeingEdited: Post | undefined
     setPostBeingEdited: (post: Post | undefined) => void
     fetchPosts: () => void
+    onLogout: () => void
 }
 const useSiteStore = create<SiteStore>()((set, get) => ({
     token: '',
@@ -44,6 +45,12 @@ const useSiteStore = create<SiteStore>()((set, get) => ({
                 console.log('GOT DATA', data)
                 setPosts(data?.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()))
             })
+    },
+    onLogout: () => {
+        set({ token: '' })
+        sessionStorage.clear()
+        localStorage.clear()
+        window.location.href = '/'
     }
 }));
 

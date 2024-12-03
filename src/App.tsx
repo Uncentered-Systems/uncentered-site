@@ -9,8 +9,11 @@ import Blogin from './components/Blogin';
 import BlogPost from './components/BlogPost';
 import CreateBlogPost from './components/CreateBlogPost';
 import SignUpForWaitlist from './components/SignupForWaitlist';
+import useSiteStore from './store/siteStore';
 
 function App() {
+  const { token } = useSiteStore()
+
   return <div className='flex flex-col w-screen max-w-screen min-h-screen overflow-y-scroll bg-white'>
     <Life />
     <BrowserRouter>

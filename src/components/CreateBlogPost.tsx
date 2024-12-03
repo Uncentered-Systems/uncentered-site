@@ -188,6 +188,11 @@ ${post.content}`, { async: true }
                         value={post.tags}
                         onChange={(e) => setPost({ ...post, tags: e.target.value })}
                     />
+                    <input
+                        type="datetime-local"
+                        value={dayjs(post.date).format('YYYY-MM-DDTHH:mm')}
+                        onChange={(e) => setPost({ ...post, date: dayjs(e.target.value || new Date()).toISOString() })}
+                    />
                     <button>
                         {editMode ? 'Update' : 'Create'}
                     </button>
@@ -231,7 +236,7 @@ ${post.content}`, { async: true }
             <div className="flex flex-col gap-4 w-1/2 p-8">
                 <h1>Preview</h1>
 
-                <div className="flex-center gap-4">
+                <div className="flex-col-center gap-4">
                     {post.thumbnailImage ? <h2
                         className="object-cover"
                     >

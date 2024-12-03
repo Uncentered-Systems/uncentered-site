@@ -25,7 +25,7 @@ dist-ssr
 .env
 test/images
 public/images
-db.test.sqlite
+*.sqlite
 .vscode
 
 package-lock.json

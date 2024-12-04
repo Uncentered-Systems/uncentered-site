@@ -23,7 +23,7 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.24.1",
-    "sharp": "^0.33.4",
+    "sharp": "^0.33.5",
     "sqlite3": "^5.1.7",
     "supertest": "^7.0.0",
     "unocss": "^0.61.0",

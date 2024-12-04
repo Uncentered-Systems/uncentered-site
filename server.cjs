@@ -6,7 +6,7 @@ const path = require('path')
 app.listen(process.env.PORT || 8080, () => console.log(`blog/podcast app listening on ${process.env.PORT || 8080}`))
 
 // every hour, backup the database
-setInterval(() => {
+const makeBackup = () => {
   const isProd = process.env.NODE_ENV === 'production'
   const homeDir = process.cwd()
   const sourceFile = isProd ? `${homeDir}/db.sqlite` : `${homeDir}/db.test.sqlite`
@@ -22,4 +22,7 @@ setInterval(() => {
     }
     console.log('Backup completed successfully')
   })
-}, 1000 * 60 * 60)
+}
+
+makeBackup()
+setInterval(makeBackup, 1000 * 60 * 60)

@@ -2,12 +2,15 @@ import { useEffect, useState } from "react"
 import { Post } from "../types/Post"
 import slugify from '../utils/slugify-ts'
 import useSiteStore from "../store/siteStore"
-import { marked } from 'marked'
+import MarkdownIt from 'markdown-it'
+import footnote from 'markdown-it-footnote'
 import { FaChevronDown, FaChevronRight } from "react-icons/fa6"
 import { useNavigate, useParams } from "react-router-dom"
 import NavBar from "./NavBar"
 import Chip from "./Chip"
 import dayjs from "dayjs"
+
+const md = new MarkdownIt().use(footnote);
 
 export default function CreateBlogPost({ editMode = false }) {
     const { token, images, fetchImageFilenames, posts } = useSiteStore()
@@ -62,13 +65,9 @@ export default function CreateBlogPost({ editMode = false }) {
     }, [])
 
     useEffect(() => {
-        marked.parse(`
+        setMarkdownContent(md.render(`
 # ${post.title}
-${post.content}`, { async: true }
-        ).then((mc) => {
-            setMarkdownContent(mc);
-            console.log({ mc })
-        })
+${post.content}`, { async: true }))
     }, [post])
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

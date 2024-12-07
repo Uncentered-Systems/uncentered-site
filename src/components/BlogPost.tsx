@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import useSiteStore from "../store/siteStore";
 import { Post } from "../types/Post";
-import { marked } from 'marked'
 import { isMobileCheck } from "../utils/dimensions";
 import { useNavigate, useParams } from "react-router-dom";
 import NavBar from "./NavBar";
@@ -9,6 +8,10 @@ import cn from "classnames";
 import dayjs from "dayjs";
 import Chip from "./Chip";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import MarkdownIt from 'markdown-it';
+import footnote from 'markdown-it-footnote';
+
+const md = new MarkdownIt().use(footnote);
 
 export default function BlogPost() {
     const slug = useParams().slug
@@ -47,7 +50,7 @@ export default function BlogPost() {
                 } else {
                     setNextPost(null)
                 }
-                const content = marked(postData.content) as string
+                const content = md.render(postData.content)
                 setPostMarkdown(content)
                 setPostData(postData)
             } else {

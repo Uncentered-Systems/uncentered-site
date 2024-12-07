@@ -8,8 +8,9 @@ app.listen(process.env.PORT || 8080, () => console.log(`blog/podcast app listeni
 // every hour, backup the database
 const makeBackup = () => {
   const isProd = process.env.NODE_ENV === 'production'
+  if (!isProd) return
   const homeDir = process.cwd()
-  const sourceFile = isProd ? `${homeDir}/db.sqlite` : `${homeDir}/db.test.sqlite`
+  const sourceFile = `${homeDir}/db.sqlite`
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
   const backupFile = `${homeDir}/backups/backup-${timestamp}.sqlite`
 

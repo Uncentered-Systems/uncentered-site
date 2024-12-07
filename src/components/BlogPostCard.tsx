@@ -4,8 +4,11 @@ import Chip from './Chip'
 import dayjs from 'dayjs'
 import { isMobileCheck } from '../utils/dimensions'
 import cn from 'classnames'
-import { marked } from 'marked'
+import MarkdownIt from 'markdown-it'
+import footnote from 'markdown-it-footnote'
 import { useEffect, useState } from 'react'
+
+const md = new MarkdownIt().use(footnote);
 
 export default function BlogPostCard(props: { postData: Post }) {
     const { postData } = props
@@ -13,7 +16,7 @@ export default function BlogPostCard(props: { postData: Post }) {
     const isMobile = isMobileCheck()
     const [markedPost, setMarkedPost] = useState<string>('')
     useEffect(() => {
-        setMarkedPost(marked(postData.content) as string)
+        setMarkedPost(md.render(postData.content))
     }, [postData.content])
     return (
         <div

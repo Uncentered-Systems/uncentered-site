@@ -4,7 +4,7 @@
     "image": "https://raw.githubusercontent.com/0x70b1a5/uncentered-site/refs/heads/master/public/favicon.png",
     "properties": {
         "package_name": "dial",
-        "current_version": "0.1.15",
+        "current_version": "0.1.16",
         "publisher": "uncentered.os",
         "mirrors": [
             "uncentered.os",
@@ -12,9 +12,8 @@
             "tantum-ergo.os"
         ],
         "code_hashes": {
-            "0.1.13": "1b1e4690de5e3844a4202aeed0b7624fb3c2520ebafd5bfd274c0b7073027b6c",
-            "0.1.14": "910079be9c513ce904b38d91368c58378ae8158c5526e986f6bb2d024fad57a2",
-            "0.1.15": "261fcb3c4bf61e90951163a25d139c6950d5fd6a2d50c9e6ee7ad46dd2b696df"
+            "0.1.15": "261fcb3c4bf61e90951163a25d139c6950d5fd6a2d50c9e6ee7ad46dd2b696df",
+            "0.1.16": "a980dc89d6651ca7e17de9f5a97c89b9f3b65c873c3048838cb3b857b36b01a3"
         },
         "wit_version": 0,
         "dependencies": []

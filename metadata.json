@@ -1,7 +1,7 @@
 {
     "name": "dial",
     "description": "read and curate the best content from anywhere",
-    "image": "https://raw.githubusercontent.com/0x70b1a5/uncentered-site/refs/heads/master/public/favicon.png",
+    "image": "https://raw.githubusercontent.com/Uncentered-Systems/uncentered-site/refs/heads/master/public/dial-favicon.png",
     "properties": {
         "package_name": "dial",
         "current_version": "0.1.16",

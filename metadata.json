@@ -4,7 +4,7 @@
     "image": "https://raw.githubusercontent.com/Uncentered-Systems/uncentered-site/refs/heads/master/public/dial-favicon.png",
     "properties": {
         "package_name": "dial",
-        "current_version": "0.1.18",
+        "current_version": "0.1.19",
         "publisher": "uncentered.os",
         "mirrors": [
             "uncentered.os",
@@ -15,7 +15,8 @@
             "0.1.15": "261fcb3c4bf61e90951163a25d139c6950d5fd6a2d50c9e6ee7ad46dd2b696df",
             "0.1.16": "a980dc89d6651ca7e17de9f5a97c89b9f3b65c873c3048838cb3b857b36b01a3",
             "0.1.17": "15a817d63f0eb28017f5f7161bbc0866a0a31aa40701653a5b677b2d7c130ffd",
-            "0.1.18": "7e37cbbbb51a63800bdc0b0aa0c04d92dcf398f7d4cbe7ffbd42f137078be399"
+            "0.1.18": "7e37cbbbb51a63800bdc0b0aa0c04d92dcf398f7d4cbe7ffbd42f137078be399",
+            "0.1.19": "1975aefe3d7bfc64286724ae8a406c79e74a07776755d9e3ad1ed030e81bd1f8"
         },
         "wit_version": 0,
         "dependencies": []

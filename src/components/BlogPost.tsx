@@ -124,7 +124,10 @@ export default function BlogPost() {
             {postData?.headerImage && <img
                 src={`/api/images/${postData.headerImage}`}
                 alt={postData.title}
-                className={cn('h-64 w-full', {
+                style={{
+                    aspectRatio: '16 / 9'
+                }}
+                className={cn('w-full', {
                 })}
             />}
             <h1 className={cn({

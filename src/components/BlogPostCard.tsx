@@ -32,7 +32,7 @@ export default function BlogPostCard(props: { postData: Post }) {
             <img
                 src={`/api/images/${postData.thumbnailImage}`}
                 alt={postData.title}
-                className={cn('grow rounded-md object-contain', {
+                className={cn('grow rounded-md object-contain aspect-square', {
                     'max-h-64 max-w-64': !isMobile,
                     'max-h-32': isMobile,
                     'hue-rotate-180': postData.deleted

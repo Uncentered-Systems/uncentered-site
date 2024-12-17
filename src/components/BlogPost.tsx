@@ -125,7 +125,7 @@ export default function BlogPost() {
                 src={`/api/images/${postData.headerImage}`}
                 alt={postData.title}
                 style={{
-                    aspectRatio: '16 / 9'
+                    aspectRatio: '8 / 3'
                 }}
                 className={cn('w-full', {
                 })}

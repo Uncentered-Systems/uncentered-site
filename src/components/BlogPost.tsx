@@ -21,7 +21,7 @@ export default function BlogPost() {
     const [previousPost, setPreviousPost] = useState<Post | null>(null)
     const [nextPost, setNextPost] = useState<Post | null>(null)
     const isMobile = isMobileCheck()
-    const { token, posts, fetchPosts } = useSiteStore()
+    const { token, fetchPosts } = useSiteStore()
 
     useEffect(() => {
         fetchPosts().then((posts) => {
@@ -57,7 +57,7 @@ export default function BlogPost() {
                 nav('/blog')
             }
         })
-    }, [posts, slug])
+    }, [slug])
 
 
     const onDeletePost = () => {

@@ -27,7 +27,8 @@ export default function Life() {
                         height,
                         offset_x: Math.round(width / 2),
                         offset_y: Math.round(height / 2),
-                    }
+                    },
+
                 }
             });
             const cells = R_PENTOMINO_GRANDPARENT;

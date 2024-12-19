@@ -9,6 +9,7 @@ import Blogin from './components/Blogin';
 import BlogPost from './components/BlogPost';
 import CreateBlogPost from './components/CreateBlogPost';
 import SignUpForWaitlist from './components/SignupForWaitlist';
+import Redirect from './components/Redirect';
 
 function App() {
   return <div className='flex flex-col w-screen max-w-screen min-h-screen overflow-y-scroll bg-white'>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Blogin />} />
         <Route path="/waitlist" element={<SignUpForWaitlist />} />
+        <Route path="/kpn" element={<Redirect to="https://pertinent.hosting.uncentered.systems/coordinator:coordinator:haecceity.os/user" />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>

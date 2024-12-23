@@ -10,7 +10,11 @@ import NavBar from "./NavBar"
 import Chip from "./Chip"
 import dayjs from "dayjs"
 
-const md = new MarkdownIt().use(footnote);
+const md = new MarkdownIt({
+    html: true,
+    linkify: true,
+    breaks: true,
+}).use(footnote);
 
 export default function CreateBlogPost({ editMode = false }) {
     const { token, images, fetchImageFilenames, posts } = useSiteStore()

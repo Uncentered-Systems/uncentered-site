@@ -11,7 +11,11 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import MarkdownIt from 'markdown-it';
 import footnote from 'markdown-it-footnote';
 
-const md = new MarkdownIt().use(footnote);
+const md = new MarkdownIt({
+    html: true,
+    linkify: true,
+    breaks: true,
+}).use(footnote);
 
 export default function BlogPost() {
     const slug = useParams().slug

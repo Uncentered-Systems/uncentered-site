@@ -92,3 +92,7 @@ img {
 .post-content a {
     @apply font-bold;
 }
+
+.post-content iframe {
+    @apply w-full aspect-video max-w-[560px] mx-auto my-4 rounded-md shadow-md;
+}

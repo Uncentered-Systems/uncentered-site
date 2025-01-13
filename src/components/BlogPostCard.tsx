@@ -20,7 +20,7 @@ export default function BlogPostCard(props: { postData: Post }) {
     }, [postData.content])
     return (
         <div
-            className={cn('flex gap-4 cursor-pointer hover:bg-green/20 duration-100 transition-all bg-green/10 p-8 rounded-md shadow-md backdrop-blur-sm self-end', {
+            className={cn('flex gap-4 cursor-pointer hover:bg-yellow/20 duration-100 transition-all bg-yellow/10 p-8 rounded-md shadow-md backdrop-blur-sm self-end', {
                 'max-w-[900px] min-w-[500px]': !isMobile,
                 'max-w-full flex-col': isMobile,
                 'hue-rotate-180': postData.deleted
@@ -38,7 +38,7 @@ export default function BlogPostCard(props: { postData: Post }) {
                     'hue-rotate-180': postData.deleted
                 })}
             />
-            {postData.deleted ? <button className='absolute bg-green top-8 right-8'>Deleted</button> : <></>}
+            {postData.deleted ? <button className='absolute bg-red text-white top-8 right-8'>Deleted</button> : <></>}
             <div className='flex flex-col gap-4 grow'>
                 <h1>{postData.title}{postData.deleted ? <span className='text-red-500'> (Deleted)</span> : <></>}</h1>
                 <p>{dayjs(postData.date).format('MMMM D, YYYY')}</p>

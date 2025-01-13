@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'
 import { isMobileCheck } from '../utils/dimensions';
 import cn from 'classnames'
 
@@ -14,7 +13,7 @@ export default function NavBar({ suppressWordmark = false }) {
             'gap-8': !isMobile
         })}>
             <Link className='cursor-pointer text-gray' to="/">
-                <img src={logo} alt="Uncentered Systems" className="h-12 unrounded" />
+                <img src='/favicon.svg' alt="Kinode Labs" className="h-12 unrounded" />
             </Link>
             <Link className='cursor-pointer text-gray' to="/">Home</Link>
             <Link className='cursor-pointer text-gray' to="/projects">Projects</Link>
@@ -22,7 +21,7 @@ export default function NavBar({ suppressWordmark = false }) {
             <Link title='Kinode Provider Network' className='cursor-pointer text-gray' to="/kpn">KPN</Link>
             <Link className='cursor-pointer text-gray' to="/contact">Contact</Link>
             <Link className='cursor-pointer text-gray' to="https://valet.uncentered.systems">Valet</Link>
-            {!isMobile && !suppressWordmark && <img src='/Green Wordmark.svg' alt="Uncentered Systems" className="h-12 object-contain unrounded ml-auto" />}
+            {!isMobile && !suppressWordmark && <img src='/Klabs-Wordmark.svg' alt="Kinode Labs" className="h-12 object-contain unrounded ml-auto" />}
         </div>
     </div>
 }

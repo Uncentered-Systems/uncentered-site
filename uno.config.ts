@@ -9,16 +9,15 @@ const config = {
     },
   ],
   rules: [
-    
+
   ],
   theme: {
     colors: {
-      white: '#FFFCF5',
-      green: '#005d30',
-      gray: '#242d25',
-      grey: '#242d25',
-      black: '#0d1c10',
-      yellow: '#fff0af',
+      white: '#FEF8F2',
+      yellow: '#eea841',
+      orange: '#df6137',
+      red: '#c33530',
+      tan: '#fbecdd',
     }
   },
   transformers: [

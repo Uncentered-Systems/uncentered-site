@@ -1,4 +1,4 @@
-# Uncentered Website
+# Kinode Labs Website
 
 ## Setup
 

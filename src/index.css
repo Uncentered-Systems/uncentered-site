@@ -6,7 +6,11 @@
 }
 
 a {
-    @apply decoration-none text-orange;
+    @apply decoration-none text-orange font-inherit;
+}
+
+span {
+    @apply font-inherit;
 }
 
 a:hover {

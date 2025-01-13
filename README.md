@@ -40,7 +40,6 @@ cp Caddyfile /etc/caddy/Caddyfile
 # 1. Do it again. Just to be sure.
     npx jest
 # 2. IF tests pass, deploy server 
-    git pull
     yarn build
     NODE_ENV=production node server.cjs # the server (podcast and blog auth)
 # 3. Deploy frontend

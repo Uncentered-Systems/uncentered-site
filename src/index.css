@@ -43,7 +43,7 @@ button[disabled] {
 
 input,
 textarea {
-    @apply bg-yellow/50 font-bold p-2 border-0 backdrop-blur-sm hover:bg-yellow/70;
+    @apply bg-yellow/10 font-bold p-2 border-0 backdrop-blur-sm hover:bg-yellow/20;
 }
 
 input {

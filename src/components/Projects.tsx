@@ -60,7 +60,7 @@ function ProjectPartnerCard({ project }: { project: { title: string, description
                 {project.link ? <a
                     href={project.link}
                     target="_blank"
-                    className="flex items-center font-inherit gap-2"
+                    className="flex items-center gap-2"
                 >
                     <span>{project.title}</span>
                     <FaLink className="text-2xl" />

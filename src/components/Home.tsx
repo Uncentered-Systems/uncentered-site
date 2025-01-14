@@ -11,11 +11,12 @@ export default function Home() {
             'p-4 gap-4': isMobile
         })}>
             <h1 className={cn('self-end display relative', {
-                'text-4xl': isMobile,
-                'text-6xl': !isMobile,
             })}>
-                <img src="/Klabs-Wordmark.png" alt="Kinode Labs" />
-                <span className="text-xs absolute top-0 -right-2">&trade;</span>
+                <img src="/Klabs-Wordmark.png" alt="Kinode Labs" className={cn({
+                    'w-96': !isMobile,
+                    'w-48': isMobile
+                })} />
+                <span className="text-xs absolute top-0 -right-3">&trade;</span>
             </h1>
             <p className={cn("text-justify", {
                 'w-[500px] text-lg': !isMobile,

@@ -113,7 +113,7 @@ img {
 
 .post-content ul,
 .post-content ol {
-    @apply ml-4;
+    @apply text-xl ml-4;
 }
 
 .post-content li {

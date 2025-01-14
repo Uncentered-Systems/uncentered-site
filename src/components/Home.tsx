@@ -16,7 +16,7 @@ export default function Home() {
                     'w-96': !isMobile,
                     'w-48': isMobile
                 })} />
-                <span className="text-xs absolute -bottom-2 -right-3">&trade;</span>
+                {/* <span className="text-xs absolute -bottom-2 -right-3">&trade;</span> */}
             </h1>
             <p className={cn("text-justify text-xl", {
                 'w-[500px] text-lg': !isMobile,

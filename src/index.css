@@ -108,7 +108,7 @@ img {
 }
 
 .post-content p {
-    @apply leading-6 my-4;
+    @apply text-xl leading-6 my-4;
 }
 
 .post-content ul,

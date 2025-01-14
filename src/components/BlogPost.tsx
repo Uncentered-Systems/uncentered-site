@@ -109,7 +109,7 @@ export default function BlogPost() {
 
     return (<>
         <NavBar />
-        <div className={cn('flex flex-col grow justify-center self-start gap-4 z-20 bg-white', {
+        <div className={cn('text-xl flex flex-col grow justify-center self-start gap-4 z-20 bg-white', {
             'ml-16 p-8 max-w-[900px]': !isMobile,
             'max-w-screen': isMobile
         })}>

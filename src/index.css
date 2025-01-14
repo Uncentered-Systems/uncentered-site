@@ -18,7 +18,7 @@ a:hover {
 }
 
 button {
-    @apply font-bold p-2 rounded-full border-1 cursor-pointer hover:opacity-80;
+    @apply p-2 rounded-full border-1 cursor-pointer hover:opacity-80;
 }
 
 button.red {

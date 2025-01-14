@@ -20,7 +20,7 @@ export default function BlogPostCard(props: { postData: Post }) {
     }, [postData.content])
     return (
         <div
-            className={cn('flex gap-4 cursor-pointer hover:bg-yellow/20 duration-100 transition-all bg-yellow/10 p-8 rounded-md shadow-md backdrop-blur-sm self-end', {
+            className={cn('text-xl flex gap-4 cursor-pointer hover:bg-yellow/20 duration-100 transition-all bg-yellow/10 p-8 rounded-md shadow-md backdrop-blur-sm self-end', {
                 'max-w-[900px] min-w-[500px]': !isMobile,
                 'max-w-full flex-col': isMobile,
                 'hue-rotate-180': postData.deleted

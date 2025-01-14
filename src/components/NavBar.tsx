@@ -8,12 +8,12 @@ export default function NavBar({ suppressWordmark = false }) {
         "p-8": !isMobile,
         "p-4": isMobile
     })}>
-        <div className={cn("flex items-center w-full", {
-            'gap-4 flex-wrap': isMobile,
+        <div className={cn("text-xl flex flex-wrap items-center w-full ", {
+            'gap-4 ': isMobile,
             'gap-8': !isMobile
         })}>
             <Link className='cursor-pointer text-gray' to="/">
-                <img src='/favicon.svg' alt="Kinode Labs" className="h-12 unrounded" />
+                <img src='/favicon.svg' alt="Kinode Labs" className="h-14 unrounded" />
             </Link>
             <Link className='cursor-pointer text-gray' to="/">Home</Link>
             <Link className='cursor-pointer text-gray' to="/projects">Projects</Link>

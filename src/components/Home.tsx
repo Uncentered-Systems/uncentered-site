@@ -18,7 +18,7 @@ export default function Home() {
                 })} />
                 <span className="text-xs absolute top-0 -right-3">&trade;</span>
             </h1>
-            <p className={cn("text-justify", {
+            <p className={cn("text-justify text-xl", {
                 'w-[500px] text-lg': !isMobile,
                 'ml-16': isMobile
             })}>

@@ -121,9 +121,10 @@ export default function BlogPost() {
             </div>}
             <button
                 onClick={() => nav('/blog')}
-                className="self-start"
+                className="self-start clear flex items-center gap-2"
             >
-                Back
+                <FaChevronLeft className="text-xl" />
+                <span>Back</span>
             </button>
             {postData?.headerImage && <img
                 src={`/api/images/${postData.headerImage}`}

@@ -11,20 +11,17 @@ const PROJECTS = [
         link: 'https://valet.uncentered.systems'
     },
     {
-        title: 'Barter',
-        description: 'A tool for selling your NFTs through Telegram via a gamified AI assistant chat. Uses Kinode to integrate your wallets, your chats, and your LLM assistants.',
-        image: '/barter.png'
+        title: 'Dial',
+        description: 'Read and curate the best content from anywhere.',
+        image: '/dial.png',
+        link: 'https://dial.online'
     },
     {
-        title: 'Filter',
-        description: 'An LLM-powered Kinode app with associated browser extension that filters your Twitter feed based on customizeable rules.',
-        image: '/filter.png'
+        title: 'KPN',
+        description: 'The Kinode Provider Network offers AI image embeddings to app developers.',
+        image: '/filter.png',
+        link: '/kpn'
     },
-    {
-        title: 'Command Center',
-        description: 'A user-centric hub for controlling your Telegram chats and bots. Ingest and analyze data for future use and integrations.',
-        image: '/command-center.png'
-    }
 ]
 
 const PARTNERS = [

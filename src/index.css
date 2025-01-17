@@ -5,6 +5,10 @@
     font-family: 'Barlow Condensed', sans-serif;
 }
 
+html {
+    @apply overflow-x-hidden;
+}
+
 a {
     @apply decoration-none text-orange font-inherit;
 }

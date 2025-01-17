@@ -8,10 +8,47 @@
 # this machine's public IP, then replace ":80" below with your
 # domain name.
 
-uncentered.systems {
-        reverse_proxy localhost:3000
+labs.kinode.org {
         reverse_proxy /api/* localhost:8080
+        reverse_proxy localhost:3000
 }
-
+valet.kinode.org {
+        reverse_proxy /api/* localhost:8081
+        reverse_proxy localhost:3001
+}
+valettesting.kinode.org {
+        reverse_proxy /api/* localhost:8082
+        reverse_proxy localhost:3002
+}
+dial.online {
+        reverse_proxy /api/* localhost:8083
+        reverse_proxy localhost:3003
+}
+staging.dial.online {
+        reverse_proxy /api/* localhost:8084
+        reverse_proxy localhost:3004
+}
+holoscope.dial.online {
+    reverse_proxy /api/* localhost:8083
+    reverse_proxy localhost:3005
+    
+    header /* {
+        -Server
+        X-Content-Type-Options "nosniff"
+        Cache-Control "public, max-age=31536000" /assets/*
+    }
+}
+uncentered.systems {
+        redir https://labs.kinode.org{uri} permanent
+}
+valet.uncentered.systems {
+        redir https://valet.kinode.org{uri} permanent
+}
+valettesting.uncentered.systems {
+        redir https://valettesting.kinode.org{uri} permanent
+}
+www.dial.online {
+        redir https://dial.online{uri}
+}
 # Refer to the Caddy docs for more information:
 # https://caddyserver.com/docs/caddyfile

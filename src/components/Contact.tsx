@@ -10,7 +10,7 @@ export default function Contact() {
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // make an anchor tag with mailto: and the email and message
-        const mailto = `mailto:info@uncentered.systems?subject=Uncentered Systems Contact&body=${message}`;
+        const mailto = `mailto:info@labs.kinode.org?subject=Kinode Labs Contact&body=${message}`;
         window.location.href = mailto;
     }
 

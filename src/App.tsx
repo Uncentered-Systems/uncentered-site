@@ -12,7 +12,7 @@ import SignUpForWaitlist from './components/SignupForWaitlist';
 import Redirect from './components/Redirect';
 
 function App() {
-  return <div className='flex flex-col w-screen max-w-screen min-h-screen overflow-y-scroll bg-white'>
+  return <div className='flex flex-col w-screen max-w-screen min-h-screen overflow-y-auto bg-white'>
     <Life />
     <BrowserRouter>
       <Routes>

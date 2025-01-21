@@ -20,7 +20,7 @@ export default function NavBar({ suppressWordmark = false }) {
             <Link className='cursor-pointer text-gray' to="/blog">Blog</Link>
             <Link title='Kinode Provider Network' className='cursor-pointer text-gray' to="/kpn">KPN</Link>
             <Link className='cursor-pointer text-gray' to="/contact">Contact</Link>
-            <Link className='cursor-pointer text-gray' to="https://valet.uncentered.systems">Valet</Link>
+            <Link className='cursor-pointer text-gray' to="https://valet.kinode.org">Valet</Link>
             {!isMobile && !suppressWordmark && <img src='/Klabs-Wordmark.svg' alt="Kinode Labs" className="h-12 object-contain unrounded ml-auto" />}
         </div>
     </div>

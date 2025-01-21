@@ -8,7 +8,7 @@ const PROJECTS = [
         title: 'Valet',
         description: 'Valet is an all-in-one hosting suite for managing a set of Kinode instances.',
         image: '/valet.png',
-        link: 'https://valet.uncentered.systems'
+        link: 'https://valet.kinode.org'
     },
     {
         title: 'Dial',

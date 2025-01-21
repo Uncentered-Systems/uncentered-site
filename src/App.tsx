@@ -25,7 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Blogin />} />
         <Route path="/waitlist" element={<SignUpForWaitlist />} />
-        <Route path="/kpn" element={<Redirect to="https://pertinent.hosting.uncentered.systems/coordinator:coordinator:haecceity.os/user" />} />
+        <Route path="/kpn" element={<Redirect to="https://pertinent.hosting.kinode.org/coordinator:coordinator:haecceity.os/user" />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>

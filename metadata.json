@@ -4,13 +4,14 @@
     "image": "https://raw.githubusercontent.com/Uncentered-Systems/uncentered-site/refs/heads/master/public/dial-favicon.png",
     "properties": {
         "package_name": "dial",
-        "current_version": "1.0.7",
-        "publisher": "uncentered.os",
+        "current_version": "1.0.8",
+        "publisher": "kino.labs",
         "mirrors": [
-            "uncentered.os"
+            "kino.labs"
         ],
         "code_hashes": {
-            "1.0.7": "e5174db78fac8a19c3a4f2f9282719e4147083417620623141989ce139d0dd07"
+            "1.0.7": "e5174db78fac8a19c3a4f2f9282719e4147083417620623141989ce139d0dd07",
+            "1.0.8": "68eebde8759de767ae96edf82f7de7d057955278654c307868e1a38ead076088"
         },
         "wit_version": 1,
         "dependencies": []
